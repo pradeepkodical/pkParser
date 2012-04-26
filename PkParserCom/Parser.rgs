@@ -1,0 +1,26 @@
+HKCR
+{
+	PkParserCom.Parser.1 = s 'Parser Class'
+	{
+		CLSID = s '{3844108D-F043-4DE1-A8CF-0F736CC29A01}'
+	}
+	PkParserCom.Parser = s 'Parser Class'
+	{
+		CLSID = s '{3844108D-F043-4DE1-A8CF-0F736CC29A01}'
+		CurVer = s 'PkParserCom.Parser.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {3844108D-F043-4DE1-A8CF-0F736CC29A01} = s 'Parser Class'
+		{
+			ProgID = s 'PkParserCom.Parser.1'
+			VersionIndependentProgID = s 'PkParserCom.Parser'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{617C0661-A339-4861-8D0A-88248DF2AEB4}'
+		}
+	}
+}

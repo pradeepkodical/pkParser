@@ -1,0 +1,39 @@
+// PkParserCom.idl : IDL source for PkParserCom.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (PkParserCom.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(907ED02C-CE17-4E01-97ED-22824558B948),
+		dual,
+		helpstring("IParser Interface"),
+		pointer_default(unique)
+	]
+	interface IParser : IDispatch
+	{
+		[id(1), helpstring("method Solve")] HRESULT Solve(BSTR expression, [out, retval] double *pVal);
+	};
+
+[
+	uuid(617C0661-A339-4861-8D0A-88248DF2AEB4),
+	version(1.0),
+	helpstring("PkParserCom 1.0 Type Library")
+]
+library PKPARSERCOMLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(3844108D-F043-4DE1-A8CF-0F736CC29A01),
+		helpstring("Parser Class")
+	]
+	coclass Parser
+	{
+		[default] interface IParser;
+	};
+};
